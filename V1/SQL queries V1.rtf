@@ -1,0 +1,113 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red39\green78\blue204;
+\red44\green55\blue61;\red42\green55\blue62;\red238\green57\blue24;\red21\green129\blue62;\red107\green0\blue1;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;\cssrgb\c20000\c40392\c83922;
+\cssrgb\c22745\c27843\c30588;\cssrgb\c21569\c27843\c30980;\cssrgb\c95686\c31765\c11765;\cssrgb\c5098\c56471\c30980;\cssrgb\c50196\c0\c0;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs48 \cf2 SQL Queries
+\f1\b0\fs24 \
+\
+\
+
+\f0\b Half1:
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 SELECT\strokec5  \strokec2 Nickname\strokec5 ,\cb1 \
+\cb3 \strokec4 COUNTIF\strokec6 (\strokec2 Round11\strokec5  <> \strokec7 0\strokec5  \strokec4 OR\strokec5  \strokec2 Round12\strokec5  <> \strokec7 0\strokec5  \strokec4 OR\strokec5  \strokec2 Round13\strokec5  <> \strokec7 0\strokec5  \strokec4 OR\strokec5  \strokec2 Round14\strokec5  <> \strokec7 0\strokec5  \strokec4 OR\strokec5  \strokec2 Round15\strokec5  <> \strokec7 0\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Rotations1\strokec5 ,\cb1 \
+\cb3 \strokec4 SUM\strokec6 (\strokec2 Total1\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Total1\strokec5 ,\cb1 \
+\cb3 \strokec4 FROM\strokec5  \strokec8 `tfm_gefs.minutesh1`\strokec5  \strokec4 as\strokec5  \strokec2 h1\cb1 \strokec5 \
+\cb3 \strokec4 INNER\strokec5  \strokec4 JOIN\strokec5  \strokec8 `tfm_gefs.squad`\cb1 \strokec5 \
+\cb3 \strokec4 ON\strokec5  \strokec9 Id_players\strokec5  = \strokec2 h1\strokec5 .\strokec2 Id_player\cb1 \strokec5 \
+\cb3 \strokec4 GROUP\strokec5  \strokec4 BY\strokec5  \strokec2 nickname\
+\
+
+\f3\b Half2:
+\f2\b0 \
+\strokec4 SELECT\strokec5  \strokec2 Nickname\strokec5 ,\cb1 \
+\cb3 \strokec4 COUNTIF\strokec6 (\strokec2 Round21\strokec5  <> \strokec7 0\strokec5  \strokec4 OR\strokec5  \strokec2 Round22\strokec5  <> \strokec7 0\strokec5  \strokec4 OR\strokec5  \strokec2 Round23\strokec5  <> \strokec7 0\strokec5  \strokec4 OR\strokec5  \strokec2 Round24\strokec5  <> \strokec7 0\strokec5  \strokec4 OR\strokec5  \strokec2 Round25\strokec5  <> \strokec7 0\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Rotations2\strokec5 ,\cb1 \
+\cb3 \strokec4 SUM\strokec6 (\strokec2 Total2\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Total2\strokec5 ,\cb1 \
+\cb3 \strokec4 FROM\strokec5  \strokec8 `tfm_gefs.minutesh2`\strokec5  \strokec4 as\strokec5  \strokec2 h2\cb1 \strokec5 \
+\cb3 \strokec4 INNER\strokec5  \strokec4 JOIN\strokec5  \strokec8 `tfm_gefs.squad`\cb1 \strokec5 \
+\cb3 \strokec4 ON\strokec5  \strokec9 Id_players\strokec5  = \strokec2 h2\strokec5 .\strokec2 Id_player\cb1 \strokec5 \
+\cb3 \strokec4 GROUP\strokec5  \strokec4 BY\strokec5  \strokec2 nickname\cb1 \strokec5 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Players summary:
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Select\strokec5  \cb1 \
+\cb3   \strokec2 Nickname\strokec5 , \strokec2 RoL\strokec5 , \strokec2 Position\strokec5 , \cb1 \
+\cb3   \strokec4 SUM\strokec6 (\strokec2 goals\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Goals\strokec5 , \cb1 \
+\cb3   \strokec4 SUM\strokec6 (\strokec2 Starting\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Starting\strokec5 , \cb1 \
+\cb3   \strokec4 COUNT\strokec6 (\strokec2 ID_player\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Available\strokec5 , \cb1 \
+\cb3   \strokec4 SUM\strokec6 (\strokec2 Free_kick\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Free_kick\strokec5 ,\cb1 \
+\cb3   \strokec4 SUM\strokec6 (\strokec4 CASE\strokec5  \strokec4 WHEN\strokec5  \strokec9 Yellow\strokec5  = \strokec7 1\strokec5  \strokec4 THEN\strokec5  \strokec2 Yellow\strokec5  \strokec4 ELSE\strokec5  \strokec7 0\strokec5  \strokec4 END\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Yellow\strokec5 ,\cb1 \
+\cb3   \strokec4 SUM\strokec6 (\strokec4 CASE\strokec5  \strokec4 WHEN\strokec5  \strokec9 Yellow\strokec5  = \strokec7 2\strokec5  \strokec4 THEN\strokec5  \strokec2 Yellow\strokec5  \strokec4 ELSE\strokec5  \strokec7 0\strokec5  \strokec4 END\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Red\strokec5 ,\cb1 \
+\cb3   \strokec4 CAST\strokec6 (\strokec4 SUM\strokec6 (\strokec2 Tackle\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec4 INT64\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Tackle\strokec5 ,\cb1 \
+\cb3   \strokec4 CAST\strokec6 (\strokec4 SUM\strokec6 (\strokec2 Lost\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec4 INT64\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 Lost\cb1 \strokec5 \
+\
+\cb3 \strokec4 From\strokec5  \strokec8 `tfm_gefs.players`\cb1 \strokec5 \
+\cb3 \strokec4 RIGHT\strokec5  \strokec4 JOIN\strokec5  \strokec8 `tfm_gefs.squad`\cb1 \strokec5 \
+\cb3 \strokec4 ON\strokec5  \strokec9 Id_players\strokec5  = \strokec2 Id_player\cb1 \strokec5 \
+\cb3 \strokec4 WHERE\strokec5  \strokec2 Nickname\strokec5  <> \strokec8 "OG"\cb1 \strokec5 \
+\cb3 \strokec4 GROUP\strokec5  \strokec4 BY\strokec5  \strokec2 Nickname\strokec5 , \strokec2 RoL\strokec5 , \strokec2 Position\strokec5 ;\
+\
+\
+
+\f3\b Presence:
+\f2\b0 \
+\strokec4 SELECT\strokec5  \cb1 \
+\cb3   \strokec2 Nickname\strokec5 ,        \cb1 \
+\cb3   \strokec4 COUNT\strokec6 (\strokec4 CASE\strokec5  \strokec4 WHEN\strokec5  \strokec9 Id_player\strokec5  = \strokec7 0\strokec5  \strokec4 THEN\strokec5  \strokec7 1\strokec5  \strokec4 END\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 TG_received\strokec5 ,\cb1 \
+\cb3   \strokec4 COUNT\strokec6 (\strokec4 CASE\strokec5  \strokec4 WHEN\strokec5  \strokec2 Id_player\strokec5  <> \strokec7 0\strokec5  \strokec4 THEN\strokec5  \strokec7 1\strokec5  \strokec4 END\strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 TG_scored\cb1 \strokec5 \
+\cb3 \strokec4 FROM\cb1 \strokec5 \
+\cb3 \strokec6 (\cb1 \strokec5 \
+\cb3     \strokec4 SELECT\strokec5  \strokec2 Player1\strokec5  \strokec4 AS\strokec5  \strokec2 number\strokec5 , \strokec2 Id_player\strokec5  \strokec4 FROM\strokec5  \strokec8 `tfm_gefs.goals`\cb1 \strokec5 \
+\cb3     \strokec4 UNION\strokec5  \strokec4 ALL\cb1 \strokec5 \
+\cb3     \strokec4 SELECT\strokec5  \strokec2 Player2\strokec5  \strokec4 AS\strokec5  \strokec2 number\strokec5 , \strokec2 Id_player\strokec5  \strokec4 FROM\strokec5  \strokec8 `tfm_gefs.goals`\cb1 \strokec5 \
+\cb3     \strokec4 UNION\strokec5  \strokec4 ALL\cb1 \strokec5 \
+\cb3     \strokec4 SELECT\strokec5  \strokec2 Player3\strokec5  \strokec4 AS\strokec5  \strokec2 number\strokec5 , \strokec2 Id_player\strokec5  \strokec4 FROM\strokec5  \strokec8 `tfm_gefs.goals`\cb1 \strokec5 \
+\cb3     \strokec4 UNION\strokec5  \strokec4 ALL\cb1 \strokec5 \
+\cb3     \strokec4 SELECT\strokec5  \strokec2 Player4\strokec5  \strokec4 AS\strokec5  \strokec2 number\strokec5 , \strokec2 Id_player\strokec5  \strokec4 FROM\strokec5  \strokec8 `tfm_gefs.goals`\cb1 \strokec5 \
+\cb3     \strokec4 UNION\strokec5  \strokec4 ALL\cb1 \strokec5 \
+\cb3     \strokec4 SELECT\strokec5  \strokec2 Player5\strokec5  \strokec4 AS\strokec5  \strokec2 number\strokec5 , \strokec2 Id_player\strokec5  \strokec4 FROM\strokec5  \strokec8 `tfm_gefs.goals`\cb1 \strokec5 \
+\cb3 \strokec6 )\strokec5  \strokec4 AS\strokec5  \strokec2 numbers\cb1 \strokec5 \
+\
+\cb3 \strokec4 RIGHT\strokec5  \strokec4 JOIN\strokec5  \strokec8 `tfm_gefs.squad`\cb1 \strokec5 \
+\cb3 \strokec4 ON\strokec5  \strokec9 Id_players\strokec5  = \strokec2 numbers\strokec5 .\strokec2 number\cb1 \strokec5 \
+\cb3 \strokec4 GROUP\strokec5  \strokec4 BY\strokec5  \strokec2 Nickname\strokec5 ;\cb1 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+
+\f0\b Dashboard 1st and 3rd charts:
+\f1\b0 \
+SELECT h1.Nickname, Total1, Total2, TG_received, TG_scored, Goals\
+From `tfm_gefs.Half1` AS h1\
+INNER JOIN `tfm_gefs.Half2` AS h2\
+ON h2.Nickname = h1.Nickname\
+INNER JOIN `tfm_gefs.presence` AS p\
+ON p.Nickname = h1.Nickname\
+INNER JOIN `tfm_gefs.players_summary` AS ps\
+ON ps.Nickname = h1.Nickname\
+\
+
+\f0\b Dashboard 2nd chart:
+\f1\b0 \
+SELECT Nickname, Id_match AS Jornada, SUM(Goals) AS Goals\
+FROM `tfm_gefs.players` AS p\
+INNER JOIN `tfm_gefs.squad` AS s\
+ON p.Id_player = s.Id_players\
+GROUP BY Nickname, Id_match}
