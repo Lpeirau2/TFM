@@ -22,7 +22,7 @@ In order to ease the development, the results have been divided into two groups:
 * **V2:** Principal Component Analysis (PCA) to analyse the performances of the players (V2)
 * **V3:** Gaussian Mixtures (GM) to estimate de density function and to cluster the players according to their performances (Unsupervised Machine Learning)
 
-In here, it can be found a folder per result containing all the necessary to be able to reproduce what has been done.
+In here, it can be found a folder per result containing all the necessary to be able to reproduce what has been done. There only appear those results that can be generalized. 
 
 Finally, **the conlusions** for this master's thesis are:
 * There has been a design of a relational database from scratch.
